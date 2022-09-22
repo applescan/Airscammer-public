@@ -30,7 +30,7 @@ With Airscammer I aim to make learning more fun, instead of reading a bunch of a
 •	Visual Studio Code
 
 ### SDLC
-The agile methodology is very effective for this project, Agile lets me develop projects in small increments and lets me focus on the MVP first before going through with other parts of the application. Features and functionality can be added or modified with relative ease, the 1-week sprints are very effective for me as it motivates me to finish quickly and reach the next goal. I'm able to complete the project earlier than expected and additional features to my web application. 
+The agile methodology is very effective for this project, agile lets me develop projects in small increments and lets me focus on the MVP first before going through with other parts of the application. Features and functionality can be added or modified with relative ease, the 1-week sprints are very effective for me as it motivates me to finish quickly and reach the next goal. I'm able to complete the project earlier than expected and additional features to my web application. 
 
 ### Links
 Visit https://airscammer.herokuapp.com/ to access the web application.
@@ -58,7 +58,6 @@ I started with a little knowledge of HTML, CSS, and some experience in building 
 By doing this project I learned how to expand my basic knowledge of HTML & CSS into a fully working web application. I expanded my knowledge of SDLC, server-side and client-side web applications and learned how to use Bootstrap, MYSQL, Node.JS, Passport, user authentication and JavaScript. I am very happy to be able to learn about creating a web application with a database and deploying it online, it is the next step in my learning journey to fully expand that knowledge and build more applications with back-end. 
 
 I am aware that there is much more to learn, and I am very motivated to learn more about APIs, React, and other frameworks in the future. 
-With the agile methodology I learned from this course, I improved my project and time management skills. I was able to do more than the required which is fully deploying the web application to a cloud server. The learning environment was good and collaborative with people helping each other.  
 
 If I am to do this project or a similar project again, I will try to do the web app with a mobile-first approach and try to flesh out all the requirements more in-depth before starting to add more dependencies to my project.
 
