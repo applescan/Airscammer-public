@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('./partials/head'); %>
+    <title>Login Failed</title>
+</head>
+
+<body>
+    <div class="topnav"> <!-- Top navigation bar -->
+        <div>
+            <a style="text-align: left;" href="/"><img src="../public/assets/images/airline-Logo.png" height="60px"
+                    width="auto" alt="logo header"></a>
+        </div>
+        <div id="myLinks">
+            <a href="../ratings">Statistics</a>
+            <a href="../resources">Resources</a>
+            <a href="../contact">Contact</a>
+            <a href="../about">About</a>
+            <a href="../logout">Logout</a>
+        </div>
+        <a href="javascript:void(0);" class="icon" onclick="nav()">
+            <i class="fa fa-bars"></i>
+        </a>
+    </div>
+
+    <div class="notAuth">
+        <div class="aboutP">
+            <h3>You entered the wrong password</h3>
+            <br>
+            <div>
+                <a href="/login">
+                    <input type="submit" class="bton" value="Retry Login" id="button" />
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

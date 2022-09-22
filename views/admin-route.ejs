@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('./partials/head'); %>
+        <style>
+            body {
+                background-image: url("/public/assets/images/background-ratings.jpg");
+                background-size: cover;
+                background-position: center center;
+            }
+        </style>
+        <title>Update Resources</title>
+</head>
+
+<body>
+    <div class="topnav"> 
+    <!-- Top navigation bar -->
+        <div>
+            <a style="text-align: left;" href="/"><img src="../public/assets/images/airline-Logo.png" height="60px"
+                    width="auto" alt="logo header"></a>
+        </div>
+        <div id="myLinks">
+            <a href="../ratings">Statistics</a>
+            <a href="../resources">Resources</a>
+            <a href="../contact">Contact</a>
+            <a href="../about">About</a>
+            <a href="../logout">Logout</a>
+        </div>
+        <a href="javascript:void(0);" class="icon" onclick="nav()">
+            <i class="fa fa-bars"></i>
+        </a>
+    </div>
+
+    <div class="main"> 
+    <!-- Main section inside the body -->
+
+        <form method="POST" class="formDetails" form action="/admin-route"> <!-- Adding resource form -->
+            <h4> Add New Resource </h4>
+            <br>
+            <div class="form-field-details">
+                <label for="source">Source:</label>
+                <input type="text" class="form-control col-lg-9" name="source" placeholder="Add Source" required>
+            </div>
+            <br>
+            <div class="form-field-details">
+                <label for="url">Url:</label>
+                <input type="text" class="form-control col-lg-9" placeholder="Add Url" name="url" required>
+            </div>
+            <br>
+            <div class="form-field-details">
+                <input type="submit" class="bton" value="Add" id="button"
+                    onclick="alert('You have succesfully added the resource 😊')" />
+            </div>
+        </form>
+
+
+        <form method="POST" class="formDetails"> 
+        <!-- Viewing/deleting resource form -->
+            <br>
+            <table class="nameCollection">
+                <tr>
+                    <th class="nameCollection" colspan="2">Resources </th>
+                </tr>
+                <% if (resourcesData.length !=0) {var i=1; resourcesData.forEach( function(data) { %>
+                <tr>
+                    <td style="padding-left: 40px; padding-right: 40px; overflow-x:auto;">
+                    <h3><strong>
+                        <a href="<%=data.url%>" target="_blank"><%=data.source%>
+                    </h3></strong>
+                        <p style="text-align: left;"><%=data.url%></p>
+                        </a>        
+                <br>
+                <br>
+                    </td>
+                    <td class="nameCollection" style="padding-right: 40px;">
+                        <a href="/delete/<%=data.id%>" onclick="return confirm('Are you sure you want to delete?')"
+                        id="button" class="bton">Delete</a>
+                    </td>
+                    </tr>
+                    <% i++; }) %>
+                    <% } else{ %>
+                <tr>
+                    <td colspan="7"> 
+                        No Data Found
+                    </td>
+                </tr>
+                    <% } %>
+            </table>
+        </form>
+
+    </div>
+
+
+</body>
+
+</html>

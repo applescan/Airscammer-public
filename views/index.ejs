@@ -1,0 +1,144 @@
+<html lang="en">
+
+<head>
+  <%- include('./partials/head'); %>
+    <title>Airscammer - Learn how to be safe in an interactive way</title>
+</head>
+
+<body>
+  <div class="topnav">
+    <!-- Top navigation bar -->
+    <div>
+      <a style="text-align: left;" href="/"><img src="../public/assets/images/airline-Logo.png" height="60px"
+          width="auto" alt="logo header"></a>
+    </div>
+    <div id="myLinks">
+      <a href="../ratings">Statistics</a>
+      <a href="../resources">Resources</a>
+      <a href="../contact">Contact</a>
+      <a href="../about">About</a>
+      <a href="../logout">Logout</a>
+    </div>
+    <a href="javascript:void(0);" class="icon" onclick="nav()">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+  <!-- Script to make sure the date selection is according to local browser time and not including the dates before today -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script>window.onload = function () {
+      const today = new Date(new Date().getTime() - new Date().getTimezoneOffset() * 60000).toISOString().split("T")[0];
+      document.getElementsByName("date")[0].setAttribute('min', today);
+    };</script>
+
+  <div class="main">
+    <!-- Main section inside the body -->
+    <br><br>
+    <h1 data-tooltip="Welcome to AirScammer! We are an inclusive scam agency 😏" data-tooltip-location="top">
+      We teach you how to
+      <span class="animation">
+        <ul style="margin-top: -8.20421em;">
+          <li>rere pai</li>
+          <!--maori-->
+          <li>fly safely</li>
+          <!--english-->
+          <li>terbang dengan aman</li>
+          <!--indonesian-->
+          <li>安全に飛ぶ</li>
+          <!--japanese-->
+          <li>fly safely</li>
+          <!--english-->
+          <li>안전하게 비행</li>
+          <!--korean-->
+          <li>veilig vliegen</li>
+          <!--dutch-->
+          <li>fly safely</li>
+          <!--english-->
+          <li>flyga säkert</li>
+          <!--swedish-->
+          <li>安全飞行</li>
+          <!--chinese-->
+          <li>lumipad ng ligtas</li>
+          <!--filipino-->
+          <li>fly safely</li>
+          <!--english-->
+        </ul>
+      </span>
+    </h1>
+
+    <!--Script for text banner animation-->
+    <script type="text/javascript">
+      var length = $("li").length;
+      var p = 0;
+      var u = 0;
+      while (u < 10000) {
+        for (i = 0; i < length; i++) {
+          $("ul").animate({
+            marginTop: "-" + (i * 2) + ".55em"
+          }, 1600);
+          p = i + 1;
+        }
+
+        if (p == length) {
+          for (j = p - 1; j >= 0; j--) {
+            $("ul").animate({
+              marginTop: "-" + (j * 2) + ".55em"
+            }, 1600);
+          }
+        }
+        u++;
+      }
+    </script>
+
+
+    <h3 data-tooltip="That's right, you got this!" data-tooltip-location="bottom">Let's pretend that you're booking a
+      flight. Look around and<strong> hover (click on mobile)</strong> on things that looked <strong>suspicious
+        👀</strong></h3>
+    <br>
+
+    <!--Script to make sure you are unable to select the same city twice-->
+    <script>
+      function toggle() {
+        var a = document.getElementById("cityFrom").options;
+        var b = document.getElementById("cityTo").options;
+        for (var i = 0; i < a.length; i++) {
+          b[i].disabled = a[i].selected;
+          a[i].disabled = b[i].selected;
+        }
+      }
+    </script>
+
+    <form action="/" method="POST" class="form-field">
+
+      <select name="cityFrom" id="cityFrom" onchange="toggle();" required>
+        <option value="" disabled selected hidden>Where are you flying from?</option>
+        <option> Auckland </option>
+        <option> Wellington </option>
+        <option> Christchurch </option>
+        <option> Queenstown </option>
+      </select>
+
+      <select name="cityTo" id="cityTo" onchange="toggle();" required>
+        <option value="" disabled selected hidden>Your destination</option>
+        <option> Auckland </option>
+        <option> Wellington </option>
+        <option> Christchurch </option>
+        <option> Queenstown </option>
+      </select>
+
+      <input name="date" type="date" id="date" placeholder="dd/mm/yyyy"
+        pattern="(^(((0[1-9]|1[0-9]|2[0-8])[\/](0[1-9]|1[012]))|((29|30|31)[\/](0[13578]|1[02]))|((29|30)[\/](0[4,6,9]|11)))[\/](19|[2-9][0-9])\d\d$)|(^29[\/]02[\/](19|[2-9][0-9])(00|04|08|12|16|20|24|28|32|36|40|44|48|52|56|60|64|68|72|76|80|84|88|92|96)$)"
+        required max='2030-01-01'>
+
+      <input type="submit" class="bton" value="search" id="button" />
+
+    </form>
+
+  </div>
+  <footer>
+    <p data-tooltip="Pay attention to suspicious competition, don’t pay anything for a chance to WIN nothing"
+      data-tooltip-location="top">Once in a lifetime trip! Be in to WIN a special trip, only with $5 entry fee</p>
+  </footer>
+
+</body>
+
+</html>

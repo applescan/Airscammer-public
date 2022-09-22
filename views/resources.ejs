@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('./partials/head'); %>
+        <title>Resources</title>
+</head>
+
+<body>
+    <div class="topnav">
+        <!-- Top navigation bar -->
+        <div>
+            <a style="text-align: left;" href="/"><img src="../public/assets/images/airline-Logo.png" height="60px"
+                    width="auto" alt="logo header"></a>
+        </div>
+        <div id="myLinks">
+            <a href="../ratings">Statistics</a>
+            <a href="../resources" class="active" style="color:white;">Resources</a>
+            <a href="../contact">Contact</a>
+            <a href="../about">About</a>
+            <a href="../logout">Logout</a>
+        </div>
+        <a href="javascript:void(0);" class="icon" onclick="nav()">
+            <i class="fa fa-bars"></i>
+        </a>
+    </div>
+
+    <div class="main">
+        <!-- Main section inside the body -->
+        <form>
+            <h4>Useful resources for online scam</h4>
+            <br>
+            <div style="text-align: center">
+                <a href="/admin-route">
+                    <input type="button" class="bton" value="Add Resources" id="button" />
+                </a>
+            </div>
+            <br>
+            <p>Please check the resources below for more information on online scams,
+                <br> admin will keep on adding more resources in the future
+            </p>
+            <br>
+
+            <!-- Resource table data-->
+
+            <table class="nameCollection">
+                <tr>
+                    <th class="nameCollection">Source</th>
+                </tr>
+
+                <% if (resourcesData.length !=0) {var i=1; resourcesData.forEach( function(data) { %>
+                    <tr>
+                        <td style="padding-left: 20px; padding-right: 20px; overflow-x:auto;">
+                            <h3><strong>
+                                <a href="<%=data.url%>" target="_blank"><%=data.source%>
+                            </h3></strong>
+                            <p style="text-align: left;">
+                                <%=data.url%>
+                            </p></a>
+                            <br>
+                            <br>
+                        </td>
+                    </tr>
+                    <% i++; }) %>
+                    <% } else{ %>
+                    <tr>
+                        <td colspan="7"> No Data Found</td>
+                    </tr>
+                    <% } %>
+            </table>
+        </form>
+    </div>
+    
+</body>
+
+</html>

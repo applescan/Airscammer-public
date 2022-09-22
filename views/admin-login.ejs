@@ -1,0 +1,52 @@
+<html lang="en">
+
+<head>
+    <%- include('./partials/head'); %>
+        <title>Admin Login</title>
+</head>
+
+<body>
+    <div class="topnav">
+        <!-- Top navigation bar -->
+        <div>
+            <a style="text-align: left;" href="/"><img src="../public/assets/images/airline-Logo.png" height="60px"
+                    width="auto" alt="logo header"></a>
+        </div>
+        <div id="myLinks">
+            <a href="../ratings">Statistics</a>
+            <a href="../resources">Resources</a>
+            <a href="../contact">Contact</a>
+            <a href="../about">About</a>
+            <a href="../logout">Logout</a>
+        </div>
+        <a href="javascript:void(0);" class="icon" onclick="nav()">
+            <i class="fa fa-bars"></i>
+        </a>
+    </div>
+
+    <div class="main">
+        <!-- Main section inside the body -->
+        <form method="POST" class="formDetails" form action='/admin-login'>
+            <h4>Admin Login 👨‍💻</h4>
+            <p>Please login to update and remove resources
+            </p>
+            <br>
+            <div class="form-field-details">
+                <label for="email">Username :</label>
+                <input type="text" class="form-control col-lg-9" id="uname" name="uname" placeholder="Enter Username">
+            </div>
+            <br>
+            <div class="form-field-details">
+                <label for="password">Password</label>
+                <input type="password" class="form-control col-lg-9" id="pw" placeholder="Enter Password" name="pw">
+            </div>
+            <br>
+            <div class="form-field-details">
+                <input type="submit" class="bton" value="Proceed" id="button" formaction="/admin-login" />
+            </div>
+        </form>
+    </div>
+
+</body>
+
+</html>

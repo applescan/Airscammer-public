@@ -1,0 +1,146 @@
+<html lang="en">
+
+<head>
+  <%- include('./partials/head'); %>
+    <title>Pick your flight</title>
+</head>
+
+<body>
+  <div class="topnav">
+    <!-- Top navigation bar -->
+    <div>
+      <a style="text-align: left;" href="/"><img src="../public/assets/images/airline-Logo.png" height="60px"
+          width="auto" alt="logo header"></a>
+    </div>
+    <div id="myLinks">
+      <a href="../ratings">Statistics</a>
+      <a href="../resources">Resources</a>
+      <a href="../contact">Contact</a>
+      <a href="../about">About</a>
+      <a href="../logout">Logout</a>
+    </div>
+    <a href="javascript:void(0);" class="icon" onclick="nav()">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+
+  <div class="main">
+    <!-- Main section inside the body -->
+    <h2>Your flight options </h2>
+    <h3 data-tooltip="That's right, you got this!" data-tooltip-location="bottom">Let's pretend that you're booking a
+      flight. Look
+      around and <strong>hover</strong> on things that looked <strong>suspicious 👀</strong></h3>
+    <br>
+    <form action="/flight" method="POST" class="form-field">
+      <!-- Form to for flight options -->
+
+      <legend>Select a flight:</legend>
+
+      <label for="qantas" class="labelforTable">
+        <!-- Pantas airline -->
+        <table>
+          <tr>
+
+            <td class="airline" data-tooltip="Pay attention to airline names! Last time I check there’s no 'Pantas'"
+              data-tooltip-location="top">
+              <img src="../public/assets/images/qantas-icon.png" height="40px" width="auto"> <strong> Pantas</strong>
+            </td>
+
+            <td class="time" data-tooltip="Nothing wrong with the time, but maybe... check the price?"
+              data-tooltip-location="top">
+              <strong>Departure:</strong> 10:00 AM - <br>
+              <Strong>Arrival:</Strong> 12:00 PM
+            </td>
+
+            <td class="price"
+              data-tooltip="There is no FREE flight ever offered at a airline website! Don’t fall to this trap"
+              data-tooltip-location="top">
+              <strong> Price:</strong> FREE
+            </td>
+
+            <td>
+              <input type="radio" id="qantas" name="airline" value="qantas" required="required">
+            </td>
+
+          </tr>
+        </table>
+      </label>
+      <br>
+
+      <label for="ainz" class="labelforTable">
+        <!-- Air Pew Zealand airline -->
+        <table>
+          <tr>
+
+            <td class="airline"
+              data-tooltip="'Air Pew Zealand'?? Hmm something is wrong. Check online if you’re not sure..."
+              data-tooltip-location="top">
+              <img src="../public/assets/images/ainz-icon.png" height="40px" width="auto"><strong> Air Pew
+                Zealand</strong>
+            </td>
+
+            <td class="time" data-tooltip="Let's be vigilant! Look around the names" data-tooltip-location="top">
+              <strong>Departure:</strong> 8:00 AM - <br>
+              <Strong>Arrival:</Strong> 10:00 AM
+            </td>
+
+            <td class="price"
+              data-tooltip="Airport does not handle a payment unless if you directly order at the counter"
+              data-tooltip-location="top">
+              <strong> Price:</strong> Pay at the airport
+            </td>
+
+            <td>
+              <input type="radio" id="ainz" name="airline" value="ainz">
+            </td>
+
+          </tr>
+        </table>
+      </label>
+
+      <br>
+      <label for="jetstar" class="labelforTable">
+        <!-- Pet Star airline -->
+        <table>
+          <tr>
+
+            <td class="airline" data-tooltip="Pet Star doesn't sound like a real airline.... 🧐"
+              data-tooltip-location="top">
+              <img src="../public/assets/images/jetstar-icon.png" height="40px" width="auto"><strong> Pet Star</strong>
+            </td>
+
+            <td class="time" data-tooltip="Could the price be FREE?" data-tooltip-location="top">
+              <strong>Departure:</strong> 6:00 AM - <br>
+              <Strong>Arrival:</Strong> 11:00 AM
+            </td>
+
+            <td class="price" data-tooltip="Nothing is ever FREE.. be careful!" data-tooltip-location="top">
+              <strong> Price:</strong> FREE for today!
+            </td>
+
+            <td>
+              <input type="radio" id="jetstar" name="airline" value="jetstar">
+            </td>
+
+          </tr>
+        </table>
+      </label>
+      <br>
+
+      <div>
+        <input type="submit" class="bton" value="Proceed with option" id="button" />
+      </div>
+    </form>
+
+
+  </div>
+
+  <footer>
+    <p data-tooltip="Pay attention to suspicious competition, don’t pay anything for a chance to WIN"
+      data-tooltip-location="top"> Want to go to your dream destination? Join us with only with $10 entry fee </p>
+  </footer>
+
+
+</body>
+
+</html>

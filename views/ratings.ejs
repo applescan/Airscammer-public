@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+
+<head>
+  <%- include('./partials/head'); %>
+    <style>
+      body {
+        background-image: url("/public/assets/images/background-ratings.jpg");
+        background-size: cover;
+        background-position: center center;
+      }
+    </style>
+    <title>User’s choice statistics</title>
+</head>
+
+<body>
+  <div class="topnav"> <!-- Top navigation bar -->
+    <div>
+      <a style="text-align: left;" href="/"><img src="../public/assets/images/airline-Logo.png" height="60px"
+          width="auto" alt="logo header"></a>
+    </div>
+    <div id="myLinks">
+      <a href="../ratings" class="active" style="color:white;">Statistics</a>
+      <a href="../resources">Resources</a>
+      <a href="../contact">Contact</a>
+      <a href="../about">About</a>
+      <a href="../logout">Logout</a>
+    </div>
+    <a href="javascript:void(0);" class="icon" onclick="nav()">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+
+  <div class="main"> 
+  <!-- Main section inside the body -->
+    <h2 style="text-align: center">Congratulations on completing this experiment! 🎉</h2>
+    <h3 style="text-align: center">Welcome back,<strong> <%= user %></strong></h3>
+    <p>You are logged in on <strong id="date-time"></strong></p>
+    <br>
+  <!-- Show time and date of login -->
+    <script>
+      const d = new Date();
+      document.getElementById("date-time").innerHTML = d;
+    </script>
+
+    <div style="text-align: center">
+      <a href="/logout">
+        <input type="submit" class="bton" value="Logout" id="button" />
+      </a>
+    </div>
+
+    <br>
+
+    <form>
+  <!-- Show all statistics data -->
+
+      <h3 class="nameCollection"><strong>Which destination is popular for scammers?</strong></h3>
+      <p>Be carefull when filling up form on the internet. As you can see..... we have collected this information from
+        you
+      </p>
+      <br>
+      <br>
+      <div class="chart-container">
+        <canvas id="city"> </canvas>
+      </div>
+
+    <!-- Bar chart for top destinations -->
+      <script>
+        const ctx = document.getElementById('city');
+        const myChart = new Chart(ctx, {
+          type: 'bar',
+          data: {
+            labels: ['Auckland', 'Wellington', 'Christchurch', 'Queenstown'],
+            datasets: [{
+              label: "User's choice",
+              data: [<%=aucklandData.length %>, <%=wellingtonData.length %>, <%=christchurchData.length %>, <%=queenstownData.length %>],
+              backgroundColor: [
+                'rgba(255, 99, 132, 0.6)',
+                'rgba(54, 162, 235, 0.6)',
+                'rgba(255, 206, 86, 0.6)',
+                'rgba(75, 192, 192, 0.6)'
+              ],
+              borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)'
+              ],
+              borderWidth: 1
+            }]
+          },
+          options: {
+            scales: {
+              y: {
+                beginAtZero: true
+              }
+            }
+          }
+        });
+      </script>
+
+
+      <script>
+<%
+          console.log(aucklandData.length);
+        console.log(wellingtonData.length);
+        console.log(christchurchData.length);
+        console.log(queenstownData.length);
+ %>
+
+ <%
+          console.log(qantasData.length);
+        console.log(ainzData.length);
+        console.log(jetstarData.length);
+ %>
+      </script>
+
+      <br>
+      <br>
+      <br>
+      <h3 class="nameCollection"><strong>Did you notice the fake airline names?</strong></h3>
+      <br>
+
+
+  <!-- Polar area chart for airlines -->    
+      <div class="chart-container">
+        <canvas id="airline"> </canvas>
+      </div>
+      <script>
+      const abc = document.getElementById('airline');
+        const myChart2 = new Chart(abc, {
+          type: 'polarArea',
+          data: {
+            labels: ['Pantas', 'Air Pew Zealand', 'Petstar'],
+            datasets: [{
+              label: "User's choice",
+              data: [<%=qantasData.length %>, <%=ainzData.length %>, <%=jetstarData.length %>],
+              backgroundColor: [
+                'rgba(255, 99, 132, 0.6)',
+                'rgba(54, 162, 235, 0.6)',
+                'rgba(255, 206, 86, 0.6)'
+              ],
+              borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)'
+              ],
+              borderWidth: 1
+            }]
+          },
+          options: {
+            scales: {
+              y: {
+                beginAtZero: true
+              }
+            }
+          }
+        });
+      </script>
+
+      <br>
+      <br>
+      <h3 class="nameCollection"> <strong>Collection of Random Names</strong></h3>
+      <p>This is what it looks like on the scammer's database. The data that they collect from you will most likely be
+        used to break two factor authentication security questions.
+        But don't worry, your information is safe with us ✅ </p>
+      <br>
+
+      <!-- Customer detail table data-->
+
+      <table class="nameCollection">
+        <tr>
+          <th class="nameCollection">Username Collection</th>
+          <th class="nameCollection">Dog Name Collection</th>
+          <th class="nameCollection">Mother Name Collection</th>
+        </tr>
+
+        <% if (detailsData.length !=0) {var i=1; detailsData.forEach( function(data) { %>
+          <tr>
+            <td class="nameCollection">
+              <%=data.username %>
+            </td>
+            <td class="nameCollection">
+              <%=data.dogName %>
+            </td>
+            <td class="nameCollection">
+              <%=data.momName %>
+            </td>
+
+          </tr>
+          <% i++; }) %>
+            <% } else{ %>
+              <tr>
+                <td colspan="7"> No Data Found</td>
+              </tr>
+              <% } %>
+      </table>
+    </form>
+  </div>
+
+</body>
+
+</html>

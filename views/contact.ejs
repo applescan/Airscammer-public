@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('./partials/head'); %>
+        <title>Contact</title>
+</head>
+
+<body>
+    <div class="topnav">
+        <!-- Top navigation bar -->
+        <div>
+            <a style="text-align: left;" href="/"><img src="../public/assets/images/airline-Logo.png" height="60px"
+                    width="auto" alt="logo header"></a>
+        </div>
+        <div id="myLinks">
+            <a href="../ratings">Statistics</a>
+            <a href="../resources">Resources</a>
+            <a href="../contact" class="active" style="color:white;">Contact</a>
+            <a href="../about">About</a>
+            <a href="../logout">Logout</a>
+        </div>
+        <a href="javascript:void(0);" class="icon" onclick="nav()">
+            <i class="fa fa-bars"></i>
+        </a>
+    </div>
+
+    <div class="main">
+        <!-- Main section inside the body -->
+        <h4>Have some questions?</h4>
+        <br>
+        <p style="text-align: center;"> Send me an email for any question or feeedbacks for this project! 📬
+        </p>
+
+        <div class="aboutP">
+
+            <form action="/contact" id="contact-form" method="post">
+
+                <div class="form-field-details">
+                    <label for="name">Full Name</label>
+                    <input type="text" class="form-control col-lg-9" name="name" placeholder="Enter your name"
+                        required="required">
+                </div>
+                <br>
+                <div class="form-field-details">
+                    <label for="subject">Subject</label>
+                    <br>
+                    <input type="text" class="form-control col-lg-9" name="subject" placeholder="Subject"
+                        required="required">
+                </div>
+                <br>
+                <div class="form-field-details">
+                    <label for="email">Email address</label>
+                    <br>
+                    <input type="email" class="form-control col-lg-9" name="email"
+                        placeholder="Enter your email address" required="required">
+                </div>
+                <br>
+                <div class="form-field-details">
+                    <label for="message">Your Message</label>
+                    <textarea type="text" class="form-control col-lg-9" name="message" placeholder="Enter your message"
+                        required="required"></textarea>
+                </div>
+                <br>
+                <div class="form-field-details">
+                    <input type="submit" class="bton" value="Send" id="button"
+                        onclick="alert('Thank you for contacting me, I will try to get back to you as soon as possible 😊')" />
+                </div>
+            </form>
+        </div>
+</body>
+
+</html>
