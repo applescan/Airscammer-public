@@ -11,7 +11,7 @@ html {
 }
 
 .main {
-  margin: 5%;
+  margin: 5% 10%;
 }
 
 .topnav {
@@ -195,7 +195,7 @@ td {
 
 .labelforTable:hover {
   -webkit-animation: pulse2 2s infinite;
-          animation: pulse2 2s infinite;
+  animation: pulse2 2s infinite;
 }
 
 /* Details Page */
@@ -258,7 +258,7 @@ th {
   font-weight: 500;
   color: #fff;
   -webkit-animation: pulse 2s infinite;
-          animation: pulse 2s infinite;
+  animation: pulse 2s infinite;
 }
 
 /* Footer */
@@ -277,7 +277,7 @@ footer {
   background-color: #2C3892;
   box-shadow: 0 0 0 0 rgba(0, 0, 0, 1);
   -webkit-animation: pulse 4s infinite;
-          animation: pulse 4s infinite;
+  animation: pulse 4s infinite;
   cursor: pointer;
   z-index: 10;
 }
@@ -363,7 +363,7 @@ a:focus {
   select,
   #date {
     display: inline;
-    width: 100%;
+    width: 70vw;
     height: 50px;
     border: solid 2px #f0f0f0;
     border-radius: 5px;
@@ -385,6 +385,15 @@ a:focus {
     width: 100%;
   }
 
+  .nameCollection {
+    text-align: center;
+    padding: 5%;
+  }
+
+  .nameCollection>p {
+    font-size: 13px;
+  }
+
   td {
     padding: 0;
     text-align: left;
@@ -394,7 +403,8 @@ a:focus {
   .airline,
   .price,
   .time {
-    display: block;
+    display: inline-grid;
+    margin: 10%;
   }
 
   .formDetails {
@@ -404,6 +414,7 @@ a:focus {
   .form-field-details {
     padding-left: 0;
     padding-right: 0;
+    margin: 0;
   }
 
   .about {
