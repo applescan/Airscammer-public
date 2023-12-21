@@ -33,7 +33,7 @@ With Airscammer I aim to make learning more fun, instead of reading a bunch of a
 The agile methodology is very effective for this project, agile lets me develop projects in small increments and lets me focus on the MVP first before going through with other parts of the application. Features and functionality can be added or modified with relative ease, the 1-week sprints are very effective for me as it motivates me to finish quickly and reach the next goal. I'm able to complete the project earlier than expected and additional features to my web application. 
 
 ### Links
-Visit https://airscammer.herokuapp.com/ to access the web application.
+Visit https://airscammer-3e77d984ab48.herokuapp.com/ to access the web application.
 
 ### User Guide
 Booking:
